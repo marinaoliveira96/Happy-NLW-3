@@ -1,0 +1,40 @@
+import express from 'express';
+
+const app = express();
+
+app.use(express.json()); //para conseguir usar o json, tipo um plugin
+
+// routa = conjunto
+// recurso = usuário
+
+// params ;
+// query params: enviados na rota http://localhost:3333/users?search=diego -> busca
+// route params: http://localhost:3333/users/1 (identificar um recurso, emviado sem nome) -> put e delete
+// body: geralmente vindo de formularios (nome, email, etc)
+app.post('/users/:id', (request, response) => {
+  console.log(request.query);
+  console.log(request.params);
+  console.log(request.body);
+  return response.json({ messge: 'hello world' });
+});
+
+app.listen(3333);
+
+
+// TypeORM -> Object Relational Notation
+
+// MVC 
+// Model 'tabela no banco', representa os dados
+// Views - como os dados estão disponiveis para o frontend
+// Controllers - lógica das rotas
+
+
+{
+	"name": "Lar das meninas",
+	"latitude": -23.6837393,
+	"longitude": -46.4294906,
+	"about": "Sobre o orfanato",
+	"instructions": "Venha visitar",
+	"opening_hours": "Das 8h até 18h",
+	"open_on_weekends": true
+}
