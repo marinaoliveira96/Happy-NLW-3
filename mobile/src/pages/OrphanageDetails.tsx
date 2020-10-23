@@ -6,7 +6,6 @@ import {
   Text,
   StyleSheet,
   Dimensions,
-  ImageStore,
   Linking,
 } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
